@@ -1,0 +1,24 @@
+[
+  {
+    "label": "Promote to dir module",
+    "command": "sh -c 'f=\"$1\"; d=\"${f%.*}\"; mkdir -p \"$d\" && mv \"$f\" \"$d/mod.rs\"' _ $ZED_RELATIVE_FILE",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true,
+    "reveal": "never",
+    "shell": "system",
+    "show_summary": false,
+    "show_output": false,
+    "tags": []
+  },
+  {
+    "label": "Degrade to file module (for mod.rs files without submodules)",
+    "command": "sh -c 'f=\"$1\"; d=\"${f%/mod.rs}\"; base=\"$(basename \"$d\")\"; parent=\"$(dirname \"$d\")\"; [ -f \"$d/mod.rs\" ] && [ \"$(ls -A \"$d\" | wc -l)\" -eq 1 ] && mv \"$d/mod.rs\" \"$parent/$base.rs\" && rmdir \"$d\"' _ $ZED_RELATIVE_FILE",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true,
+    "reveal": "never",
+    "shell": "system",
+    "show_summary": false,
+    "show_output": false,
+    "tags": []
+  }
+]
