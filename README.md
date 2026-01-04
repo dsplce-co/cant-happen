@@ -11,7 +11,7 @@
 Use `cant_happen` in lieu of `expect`/`unwrap` on a `Result` or `Option` you are certain _cannot fail_. Pass the reason why as the method's argument. Think of what you write in the argument as the continuation of the sentence "A failure _can't happen_ here because...".
 
 ```rust
-pub use cant_happen::prelude::*;
+use cant_happen::prelude::*;
 
 let regex = Regex::new("[a-z]").cant_happen("regular expression is hardcoded");
 ```
@@ -21,7 +21,7 @@ let regex = Regex::new("[a-z]").cant_happen("regular expression is hardcoded");
 For public projects, you probably want to get your users to report the occurrences of such "impossible" failures as soon as they happen. Make it extra easy for them and set up your GitHub repository's issue creation URL in `cant-happen`. The library will provide them a link to create an issue with the error details pre-filled.
 
 ```rust
-pub use cant_happen::prelude::*;
+use cant_happen::prelude::*;
 
 fn main() {
     set_repository_new_issue_url("https://github.com/<your_name>/<your_crate>/issues/new");
