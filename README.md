@@ -177,8 +177,6 @@ This way:
 
 What's more, we can actually go one step further and add a message just in case it indeed fails (even though you should never use this if you can see room for that).
 
-<image>
-
 ### How is this different from `expect`
 
 It's actually very similar to `expect` and the name of this lib was even supposed to be "better-expect" at first but:
