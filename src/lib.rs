@@ -16,7 +16,7 @@ lazy_static! {
 pub trait CantHappen<T> {
     #[cfg_attr(
         feature = "github",
-        doc = "To use with `Result` or `Option` when it's visible in the code that panic is not expected, prints error about reporting GitHub issue"
+        doc = "To use with `Result` or `Option` when it's visible in the code that panic is not expected, prints error and instructions on reporting a GitHub issue"
     )]
     #[cfg_attr(
         not(feature = "github"),
